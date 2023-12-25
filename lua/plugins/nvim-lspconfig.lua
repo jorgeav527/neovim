@@ -35,9 +35,9 @@ local config = function()
 
 	-- json
 	-- lspconfig.jsonls.setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- filetypes = { "json", "jsonc" },
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- filetypes = { "json", "jsonc" },
 	-- })
 
 	-- python
@@ -59,53 +59,53 @@ local config = function()
 
 	-- typescript
 	-- lspconfig.tsserver.setup({
-		-- on_attach = on_attach,
-		-- capabilities = capabilities,
-		-- filetypes = {
-			-- "typescript",
-		-- },
-		-- root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+	-- on_attach = on_attach,
+	-- capabilities = capabilities,
+	-- filetypes = {
+	-- "typescript",
+	-- },
+	-- root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	-- })
 
 	-- bash
 	-- lspconfig.bashls.setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- filetypes = { "sh", "aliasrc" },
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- filetypes = { "sh", "aliasrc" },
 	-- })
 
 	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	-- lspconfig.emmet_ls.setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- filetypes = {
-			-- "typescriptreact",
-			-- "javascriptreact",
-			-- "javascript",
-			-- "css",
-			-- "sass",
-			-- "scss",
-			-- "less",
-			-- "svelte",
-			-- "vue",
-			-- "html",
-		-- },
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- filetypes = {
+	-- "typescriptreact",
+	-- "javascriptreact",
+	-- "javascript",
+	-- "css",
+	-- "sass",
+	-- "scss",
+	-- "less",
+	-- "svelte",
+	-- "vue",
+	-- "html",
+	-- },
 	-- })
 
 	-- docker
 	-- lspconfig.dockerls.setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
 	-- })
 
 	-- C/C++
 	-- lspconfig.clangd.setup({
-		-- capabilities = capabilities,
-		-- on_attach = on_attach,
-		-- cmd = {
-			-- "clangd",
-			-- "--offset-encoding=utf-16",
-		-- },
+	-- capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- cmd = {
+	-- "clangd",
+	-- "--offset-encoding=utf-16",
+	-- },
 	-- })
 
 	local luacheck = require("efmls-configs.linters.luacheck")
