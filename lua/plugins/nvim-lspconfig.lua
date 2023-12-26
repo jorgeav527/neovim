@@ -34,11 +34,11 @@ local config = function()
 	})
 
 	-- json
-	-- lspconfig.jsonls.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- filetypes = { "json", "jsonc" },
-	-- })
+	lspconfig.jsonls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "json", "jsonc" },
+	})
 
 	-- python
 	lspconfig.pyright.setup({
@@ -58,91 +58,75 @@ local config = function()
 	})
 
 	-- typescript
-	-- lspconfig.tsserver.setup({
-	-- on_attach = on_attach,
-	-- capabilities = capabilities,
-	-- filetypes = {
-	-- "typescript",
-	-- },
-	-- root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
-	-- })
+	lspconfig.tsserver.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = {
+			"typescript",
+		},
+		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+	})
 
 	-- bash
-	-- lspconfig.bashls.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- filetypes = { "sh", "aliasrc" },
-	-- })
+	lspconfig.bashls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "sh", "aliasrc" },
+	})
 
 	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
-	-- lspconfig.emmet_ls.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- filetypes = {
-	-- "typescriptreact",
-	-- "javascriptreact",
-	-- "javascript",
-	-- "css",
-	-- "sass",
-	-- "scss",
-	-- "less",
-	-- "svelte",
-	-- "vue",
-	-- "html",
-	-- },
-	-- })
+	lspconfig.emmet_ls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = {
+			"typescriptreact",
+			"javascriptreact",
+			"javascript",
+			"css",
+			"sass",
+			"scss",
+			"less",
+			"svelte",
+			"vue",
+			"html",
+		},
+	})
 
 	-- docker
-	-- lspconfig.dockerls.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- })
-
-	-- C/C++
-	-- lspconfig.clangd.setup({
-	-- capabilities = capabilities,
-	-- on_attach = on_attach,
-	-- cmd = {
-	-- "clangd",
-	-- "--offset-encoding=utf-16",
-	-- },
-	-- })
+	lspconfig.dockerls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+	})
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local ruff = require("efmls-configs.linters.ruff")
 	local black = require("efmls-configs.formatters.black")
-	-- local eslint = require("efmls-configs.linters.eslint")
-	-- local prettier_d = require("efmls-configs.formatters.prettier_d")
-	-- local fixjson = require("efmls-configs.formatters.fixjson")
-	-- local shellcheck = require("efmls-configs.linters.shellcheck")
-	-- local shfmt = require("efmls-configs.formatters.shfmt")
-	-- local hadolint = require("efmls-configs.linters.hadolint")
-	-- local solhint = require("efmls-configs.linters.solhint")
-	-- local cpplint = require("efmls-configs.linters.cpplint")
-	-- local clangformat = require("efmls-configs.formatters.clang_format")
+	local eslint_d = require("efmls-configs.linters.eslint_d")
+	local prettier_d = require("efmls-configs.formatters.prettier_d")
+	local fixjson = require("efmls-configs.formatters.fixjson")
+	local shellcheck = require("efmls-configs.linters.shellcheck")
+	local shfmt = require("efmls-configs.formatters.shfmt")
+	local hadolint = require("efmls-configs.linters.hadolint")
 
 	-- configure efm server
 	lspconfig.efm.setup({
 		filetypes = {
 			"lua",
 			"python",
-			-- "json",
-			-- "jsonc",
-			-- "sh",
-			-- "javascript",
-			-- "javascriptreact",
-			-- "typescript",
-			-- "typescriptreact",
-			-- "svelte",
-			-- "vue",
-			-- "markdown",
-			-- "docker",
-			-- "solidity",
-			-- "html",
-			-- "css",
-			-- "c",
-			-- "cpp",
+			"typescript",
+			"json",
+			"jsonc",
+			"sh",
+			"javascript",
+			"javascriptreact",
+			"typescriptreact",
+			"svelte",
+			"vue",
+			"markdown",
+			"html",
+			"css",
+			"docker",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -156,22 +140,19 @@ local config = function()
 			languages = {
 				lua = { luacheck, stylua },
 				python = { ruff, black },
-				-- typescript = { eslint, prettier_d },
-				-- json = { eslint, fixjson },
-				-- jsonc = { eslint, fixjson },
-				-- sh = { shellcheck, shfmt },
-				-- javascript = { eslint, prettier_d },
-				-- javascriptreact = { eslint, prettier_d },
-				-- typescriptreact = { eslint, prettier_d },
-				-- svelte = { eslint, prettier_d },
-				-- vue = { eslint, prettier_d },
-				-- markdown = { prettier_d },
-				-- docker = { hadolint, prettier_d },
-				-- solidity = { solhint },
-				-- html = { prettier_d },
-				-- css = { prettier_d },
-				-- c = { clangformat, cpplint },
-				-- cpp = { clangformat, cpplint },
+				typescript = { eslint_d, prettier_d },
+				json = { eslint_d, fixjson },
+				jsonc = { eslint_d, fixjson },
+				sh = { shellcheck, shfmt },
+				javascript = { eslint_d, prettier_d },
+				javascriptreact = { eslint_d, prettier_d },
+				typescriptreact = { eslint_d, prettier_d },
+				svelte = { eslint_d, prettier_d },
+				vue = { eslint_d, prettier_d },
+				markdown = { prettier_d },
+				css = { prettier_d },
+				html = { prettier_d },
+				docker = { hadolint, prettier_d },
 			},
 		},
 	})
