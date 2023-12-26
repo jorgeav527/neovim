@@ -126,7 +126,7 @@ local config = function()
 			"markdown",
 			"html",
 			"css",
-			"docker",
+			"dockerfile",
 		},
 		init_options = {
 			documentFormatting = true,

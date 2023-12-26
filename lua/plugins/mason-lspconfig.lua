@@ -8,8 +8,6 @@ local opts = {
 		"emmet_ls",
 		"jsonls",
 		-- "tailwindcss",
-		-- "clangd",
-		-- "solidity",
 	},
 
 	automatic_installation = true,
